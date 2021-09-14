@@ -26,4 +26,5 @@ urlpatterns = [
     path('edit/<int:blog_id>', blogapp.edit, name="edit"),
     path('update/<int:blog_id>', blogapp.update, name="update"),
     path('delete/<int:blog_id>', blogapp.delete, name="delete"),
+    path('<int:blog_id>/comment', blogapp.add_comment_to_post, name="add_comment_to_post"),
 ]
