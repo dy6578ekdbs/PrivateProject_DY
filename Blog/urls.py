@@ -30,5 +30,9 @@ urlpatterns = [
     path('<int:blog_id>/comment', blogapp.add_comment_to_post, name="add_comment_to_post"),
     path('account/login', account.login_view, name="login"),
     path('account/logout', account.logout_view, name="logout"),
-    path('account/register', account.register_view, name="register")
+    path('account/register', account.register_view, name="register"),
+    path('<int:blog_id>/create_youtube', blogapp.create_youtube, name="create_youtube"),
+    path('delete/<int:blog_id>/<int:youtube_id>', blogapp.delete_youtube, name="delete_youtube"),
+    path('edit/<int:blog_id>/<int:youtube_id>', blogapp.edit_youtube, name="edit_youtube"),
+    path('update_youtube/<int:youtube_id>', blogapp.update_youtube, name="update_youtube")
 ]
