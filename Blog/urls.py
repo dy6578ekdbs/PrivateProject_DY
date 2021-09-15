@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 import blogapp.views as blogapp
+import account.views as account
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', blogapp.home, name="home"),
@@ -27,4 +28,7 @@ urlpatterns = [
     path('update/<int:blog_id>', blogapp.update, name="update"),
     path('delete/<int:blog_id>', blogapp.delete, name="delete"),
     path('<int:blog_id>/comment', blogapp.add_comment_to_post, name="add_comment_to_post"),
+    path('account/login', account.login_view, name="login"),
+    path('account/logout', account.logout_view, name="logout"),
+    path('account/register', account.register_view, name="register")
 ]
