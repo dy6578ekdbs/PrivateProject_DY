@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+
+    <div>좋아요 수 : </div>
+    <hr>    
     <a href="{% url 'create_youtube' blog.id %}"> 영상 추가하기</a>
     <h1>{{ blog.title}}</h1>
     <p>글쓴이 : {{blog.author}}</p>

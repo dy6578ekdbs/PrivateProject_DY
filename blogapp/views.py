@@ -1,7 +1,8 @@
+from typing_extensions import Required
 from django.db.models.fields import BLANK_CHOICE_DASH
 from django.http import request
 from django.shortcuts import get_object_or_404, redirect, render
-from .models import Blog, HashTag, Youtube
+from .models import Blog, HashTag, Youtube, CustomUser
 from django.utils import timezone
 from .forms import BlogForm, CommentForm, YoutubeForm
 # Create your views here.
@@ -25,7 +26,6 @@ def create(request):
         new_blog = form.save(commit=False) #임시저장을 위함
         new_blog.pub_date = timezone.now()
         new_blog.author = request.user
-        new_blog.save()
         hashtags = request.POST['hashtags']
         hashtag = hashtags.split(",")
         for tag in hashtag:
@@ -96,3 +96,18 @@ def update_youtube(request,youtube_id): #수정하기
     youtube_update.url = request.POST['url']
     youtube_update.save()
     return redirect('home')
+
+def video_list(request):
+    video_list = Blog.objects.all()
+    
+    search_key = request.GET.get('search_key') # 검색어 가져오기
+    if search_key: # 만약 검색어가 존재하면
+        video_list = video_list.filter(title__icontains=search_key) # 해당 검색어를 포함한 queryset 가져오기
+
+    return render(request, 'video_list.html', {'video_list':video_list})
+
+
+def mypage(request):
+    myblog = Blog.objects.filter(author = request.user)
+    #liked_post = 
+    return render(request, 'mypage.html',{'myblogs': myblog})

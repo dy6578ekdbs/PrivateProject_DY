@@ -34,5 +34,7 @@ urlpatterns = [
     path('<int:blog_id>/create_youtube', blogapp.create_youtube, name="create_youtube"),
     path('delete/<int:blog_id>/<int:youtube_id>', blogapp.delete_youtube, name="delete_youtube"),
     path('edit/<int:blog_id>/<int:youtube_id>', blogapp.edit_youtube, name="edit_youtube"),
-    path('update_youtube/<int:youtube_id>', blogapp.update_youtube, name="update_youtube")
+    path('update_youtube/<int:youtube_id>', blogapp.update_youtube, name="update_youtube"),
+    path('video_list/', blogapp.video_list, name="video_list"),
+    path('mypage/', blogapp.mypage, name="mypage")
 ]
