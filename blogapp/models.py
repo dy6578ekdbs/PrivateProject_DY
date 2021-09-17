@@ -15,6 +15,7 @@ class Blog(models.Model): #큰 글
     pub_date = models.DateField('date published')
     body =models.TextField()
     hashtag = models.ManyToManyField(HashTag) #해시태그
+    like_count = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.title

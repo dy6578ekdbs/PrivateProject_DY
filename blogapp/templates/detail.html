@@ -7,8 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+    <div>좋아요 수 : {{blog.like_count}}</div>
 
-    <div>좋아요 수 : </div>
+    <a href="{% url 'post_like_toggle' blog.id %}">
+        {% if blog in user.profile.like_posts.all %}
+            취소
+        {% else %}
+            좋아요
+        {% endif %}
+    </a>
     <hr>    
     <a href="{% url 'create_youtube' blog.id %}"> 영상 추가하기</a>
     <h1>{{ blog.title}}</h1>

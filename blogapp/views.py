@@ -1,4 +1,3 @@
-from typing_extensions import Required
 from django.db.models.fields import BLANK_CHOICE_DASH
 from django.http import request
 from django.shortcuts import get_object_or_404, redirect, render
@@ -26,6 +25,7 @@ def create(request):
         new_blog = form.save(commit=False) #임시저장을 위함
         new_blog.pub_date = timezone.now()
         new_blog.author = request.user
+        new_blog.save()
         hashtags = request.POST['hashtags']
         hashtag = hashtags.split(",")
         for tag in hashtag:
@@ -109,5 +109,24 @@ def video_list(request):
 
 def mypage(request):
     myblog = Blog.objects.filter(author = request.user)
-    #liked_post = 
-    return render(request, 'mypage.html',{'myblogs': myblog})
+    liked_blog = request.user.like_posts.all()
+    return render(request, 'mypage.html',{'myblogs': myblog, 'liked_blogs':liked_blog})
+
+
+def post_like_toggle(request, blog_id):
+    blog = get_object_or_404(Blog, id=blog_id)
+    user = request.user
+    profile = CustomUser.objects.get(username=user) #휴
+
+    check_like_post = profile.like_posts.filter(id=blog_id)
+
+    if check_like_post.exists():
+        profile.like_posts.remove(blog)
+        blog.like_count -= 1
+        blog.save()
+    else:
+        profile.like_posts.add(blog)
+        blog.like_count += 1
+        blog.save()
+
+    return redirect('detail', blog_id)
