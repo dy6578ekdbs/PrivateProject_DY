@@ -125,7 +125,8 @@ def video_list(request):
 def mypage(request):
     myblog = Blog.objects.filter(author = request.user)
     liked_blog = request.user.like_posts.all()
-    return render(request, 'mypage.html',{'myblogs': myblog, 'liked_blogs':liked_blog})
+    user_info = request.user
+    return render(request, 'mypage.html',{'myblogs': myblog, 'liked_blogs':liked_blog, 'user_infos':user_info})
 
 
 def post_like_toggle(request, blog_id):

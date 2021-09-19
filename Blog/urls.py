@@ -32,6 +32,7 @@ urlpatterns = [
     path('account/login', account.login_view, name="login"),
     path('account/logout', account.logout_view, name="logout"),
     path('account/register', account.register_view, name="register"),
+    path('edit_user_info/', account.edit_user_info, name='edit_user_info'),
     path('<int:blog_id>/create_youtube', blogapp.create_youtube, name="create_youtube"),
     path('delete/<int:blog_id>/<int:youtube_id>', blogapp.delete_youtube, name="delete_youtube"),
     path('edit/<int:blog_id>/<int:youtube_id>', blogapp.edit_youtube, name="edit_youtube"),
@@ -42,5 +43,6 @@ urlpatterns = [
     path('delete_comment/<int:blog_id>/<int:comment_id>', blogapp.delete_comment, name="delete_comment"),
     path('edit_comment/<int:blog_id>/<int:comment_id>', blogapp.edit_comment, name="edit_comment"),
     path('update_comment/<int:comment_id>', blogapp.update_comment, name="update_comment"),
+
     
 ]
