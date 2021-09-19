@@ -1,7 +1,7 @@
 from django.db.models.fields import BLANK_CHOICE_DASH
 from django.http import request
 from django.shortcuts import get_object_or_404, redirect, render
-from .models import Blog, HashTag, Youtube, CustomUser
+from .models import Blog, Comment, HashTag, Youtube, CustomUser
 from django.utils import timezone
 from .forms import BlogForm, CommentForm, YoutubeForm
 # Create your views here.
@@ -33,7 +33,7 @@ def create(request):
             new_blog.hashtag.add(ht[0])
         return redirect('detail', new_blog.id) 
     return redirect('home')
-   
+
 
 def edit(request, blog_id):
     blog_detail = get_object_or_404(Blog, pk=blog_id)
@@ -65,6 +65,21 @@ def add_comment_to_post(request, blog_id): #댓글
         form = CommentForm()
     return render(request, 'add_comment_to_post.html',{'form':form})
 
+def edit_comment(request, comment_id, blog_id):  #댓글 수정 페이지로 이동
+    comment = Comment.objects.get(id = comment_id)
+    return render(request, 'edit_comment.html', {'comment' : comment})
+
+def update_comment(request,comment_id): #댓글 수정하기
+    comment_update = Comment.objects.get(id = comment_id)
+    comment_update.author_name = request.POST['author_name']
+    comment_update.comment_text = request.POST['comment_text']
+    comment_update.save()
+    return redirect('home')
+    
+def delete_comment(request, blog_id, comment_id): #댓글 삭제하기
+    comment_delete = Comment.objects.get(id = comment_id)
+    comment_delete.delete()
+    return redirect('detail', blog_id)
 
 def create_youtube(request, blog_id): #유튜브 게시글 추가
     blog = get_object_or_404(Blog, pk = blog_id)
@@ -80,7 +95,7 @@ def create_youtube(request, blog_id): #유튜브 게시글 추가
     return render(request, 'create_youtube.html',{'form':form})
 
 
-def delete_youtube(request, blog_id, youtube_id): #삭제하기
+def delete_youtube(request, blog_id, youtube_id): #영상 삭제하기
     youtube_delete = Youtube.objects.get(id = youtube_id)
     youtube_delete.delete()
     return redirect('detail', blog_id)
@@ -89,7 +104,7 @@ def edit_youtube(request, youtube_id, blog_id):  #영상 수정 페이지로 이
     youtube_detail = Youtube.objects.get(id = youtube_id)
     return render(request, 'edit_youtube.html', {'youtube' : youtube_detail})
 
-def update_youtube(request,youtube_id): #수정하기
+def update_youtube(request,youtube_id): #영상 수정하기
     youtube_update = Youtube.objects.get(id = youtube_id)
     youtube_update.subtitle = request.POST['subtitle']
     youtube_update.body = request.POST['body']
