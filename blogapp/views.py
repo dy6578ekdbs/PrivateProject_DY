@@ -133,24 +133,7 @@ def mypage(request):
     user_info = request.user
     return render(request, 'mypage.html',{'myblogs': myblog, 'liked_blogs':liked_blog, 'user_infos':user_info})
 
-@login_required
-@require_POST
-def video_like(request):
-    pk = request.POST.get('pk', None)
-    video = get_object_or_404(Blog, pk=pk)
-    user = request.user
-
-    if video.likes_user.filter(id=user.id).exists():
-        video.likes_user.remove(user)
-        message = '좋아요 취소'
-    else:
-        video.likes_user.add(user)
-        message = '좋아요'
-
-    context = {'likes_count':video.count_likes_user(), 'message': message}
-    return HttpResponse(json.dumps(context), content_type="application/json")
-
-def likes(request): 
+def likes(request): #좋아요 기능
     if request.is_ajax(): #ajax 방식일 때 아래 코드 실행
         blog_id = request.GET['blog_id'] #좋아요를 누른 게시물id (blog_id)가지고 오기
         post = Blog.objects.get(id=blog_id) 

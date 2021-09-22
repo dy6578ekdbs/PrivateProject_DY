@@ -17,9 +17,9 @@ class Blog(models.Model): #큰 글
     body =models.TextField()
     hashtag = models.ManyToManyField(HashTag) #해시태그
     like_count = models.PositiveIntegerField(default=0)
-    likes_user = models.ManyToManyField(
-        settings.AUTH_USER_MODEL, # this is preferred than just 'User'
-        blank=True, # blank is allowed
+    likes_user = models.ManyToManyField( #
+        settings.AUTH_USER_MODEL, # 유저 
+        blank=True, # 없는 상태 허용
         related_name='likes_user'
     ) # likes_user field
     like = models.ManyToManyField(CustomUser, related_name='likes',blank=True)

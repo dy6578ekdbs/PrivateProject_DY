@@ -7,13 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <input type="button" name="{{ video.id }}" value="Like"
-            style="margin-top: 7px; background-color: red;">
-        <p id="count-{{ video.id }}" style="font:bold 1em; margin-top: 3px">
-            좋아요&nbsp;{{ blog.likes_user.all.count }}개</p>
-    </div>
-    <hr>
+    
     <button id="{{blog.id}}" onclick="post_like(this.id)"> <!--좋아효 버튼을 만들어주기-->
         좋아요
         <span id="like_count">{{blog.like.count}}</span> 
@@ -80,6 +74,7 @@
 
     
 </script>
+
 <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script type="text/javascript">
