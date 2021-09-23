@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/component.css">
+
     <title>Document</title>
 </head>
 <body>
+
+
     <a class="search_button" href="{% url 'video_list' %}">검색하기</a>
 
     {% if not user.is_authenticated %}
@@ -39,5 +42,7 @@
     <p>날짜: {{blog.pub_date}}</p>
     <p>본문: {{blog.summary}}<a href="{% url 'detail' blog.id %}">...more</a></p>
     {% endfor %}
+  
+ 
 </body>
 </html>
