@@ -25,9 +25,6 @@ class Blog(models.Model): #큰 글
     def summary(self):
         return self.body[:100]
 
-    def count_likes_user(self): # total likes_user
-        return self.likes_user.count()
-
 class Youtube(models.Model): #하위 유튜브 목록
     post = models.ForeignKey(Blog, related_name='youtubes', on_delete=models.CASCADE)
     subtitle = models.CharField(max_length=200)
@@ -51,5 +48,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.comment_text
-
 

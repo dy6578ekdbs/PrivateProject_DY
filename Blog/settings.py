@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blogapp.apps.BlogappConfig',
     'account.apps.AccountConfig',
+    'django_social_share',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,9 @@ ROOT_URLCONF = 'Blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,7 +131,6 @@ STATICFILES_DIRS=[
 ]
 
 STATIC_ROOT=os.path.join(BASE_DIR, 'static')
-
 
 #미디어 파일이 어디로 모일지
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
