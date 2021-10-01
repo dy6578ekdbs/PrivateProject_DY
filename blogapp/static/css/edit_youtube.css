@@ -1,0 +1,38 @@
+.edit-youtube-section{
+    width: 30%;
+    margin: 120px auto 180px auto;
+   
+}
+
+.edit-youtube-section h1{
+    margin-bottom: 50px;
+}
+
+.edit-youtube-section form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.edit-youtube-sectionform button{
+    background-color: #5C3471;
+    color: white;
+
+    border-style: none;
+    border-radius: 13px;
+
+    padding: 3px 10px 3px 10px;
+
+    font-size: large;
+
+    margin-top: 30px;
+    width: 120px;
+
+    cursor: pointer;
+}
+
+
+.edit-youtube-section form button:hover{
+    box-shadow: 0px 0px 3px 2px rgba(115, 66, 141, 0.78);
+}
+

@@ -1,0 +1,181 @@
+.none{
+    display: none;
+}
+
+.big-post-section{
+    width: 100%;
+
+}
+
+.big-post{
+
+    border: solid black 1px;
+    padding: 20px;
+    
+    width: 60%;
+    height: auto;
+
+    margin: 50px auto 50px auto;
+}
+
+.big-post-info{
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.author-date{
+    margin: 0;
+    line-height: 30px;
+}
+
+.toast{
+    line-height: 30px;
+}
+.like-button{
+    margin-left: 4px;
+    background-color: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    
+}
+.like_count{
+    color: red;
+    text-align: middle;
+    
+}
+
+.fa-heart{
+    color: red;
+
+}
+
+.big-post-content{
+    display: flex;
+    margin-top: 5px;
+}
+
+.big-post-content-1{
+    width: 75%;
+    margin-right: 50px;
+    /* border: solid black 1px; */
+    
+}
+
+.big-post-content-1 p{
+    margin: 0;
+}
+
+
+.big-post-content-2{
+    
+    text-decoration: none;
+
+}
+
+.fab{
+    vertical-align:middle;
+    line-height: 21px;
+    text-align:center;
+    
+}
+
+/*d*/
+.youtube-section{
+    background-color:#E7E5DD;
+    width: 100%;
+
+    padding: 5px 0 30px 0;
+}
+
+.youtube-title-section{
+    
+    width: 60%;
+    margin: 50px auto 0 auto;
+
+    justify-content: center;
+    text-align: center;
+
+}
+
+
+.youtube-title-section a{
+    text-align: center;
+}
+.youtube-post{
+
+    border: solid black 1px;
+    padding: 20px;
+    
+    width: 60%;
+    height: auto;
+
+    margin: 50px auto 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(auto, 1fr);
+
+}
+
+.youtube-object{
+    padding: 3px;
+}
+
+
+.youtube-object p{
+    margin: 0;
+}
+
+.youtube-object p{
+    margin: 0;
+}
+
+iframe{
+    width: 100%;
+    height: 56.25%;
+}
+
+/*댓글*/
+.comment-section{
+    width: 100%;
+    margin: 0;
+   
+}
+
+.comments{
+
+
+    width: 60%;
+    margin:50px  auto 100px auto;
+
+}
+
+.add-comment-button{
+    margin-top: 30px;
+}
+.comments a{
+    border: solid rgb(0, 0, 0) 1px;
+    border-radius: 2px;
+}
+
+.comment-object{
+    display: flex;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+
+.comment-info{
+   
+}
+
+.comment-text{
+    border: solid rgb(0, 0, 0) 1px;
+    border-radius: 2px;
+    
+    width: 100%;
+}

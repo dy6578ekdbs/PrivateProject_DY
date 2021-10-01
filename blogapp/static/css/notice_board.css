@@ -1,0 +1,9 @@
+.notice-section{
+    width: 45%;
+    margin: 150px auto 200px auto;
+}
+
+.notice-text{
+    margin-top: 50px;
+    font-size: large;
+}

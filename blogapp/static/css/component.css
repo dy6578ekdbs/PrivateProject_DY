@@ -1,11 +1,151 @@
-/* @import url("./reset.css"); */
-*{
-    text-decoration: none;
+* {
+  text-decoration: none;
+  box-sizing:border-box; /*이거 해야 좌우 비율 맞아*/
 }
-.search_button{
-    color:white;
-    border-style: none;
-    border-radius: 3px;
-    background-color: blue;
-    margin: 5px;
+
+body{
+  background-color: #F1EFE9;
+  margin:0;
+}
+
+/*사이드*/
+.side-header{
+  position:fixed;
+  top:0; left:0;
+
+  height:100%; 
+  width:8%;
+  margin: 0;
+
+  padding:3vh 3vh 72px 3vh; /*위부터 시계 방향*/
+
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+
+  /* box-shadow: 10px 5px 5px rgba(43, 43, 43, 0.1); */
+
+  text-decoration: none;
+  font-size: 5px;
+}
+
+.logo{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.logo i{
+  font-size: 55px;
+}
+
+.logo p{
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.menu-buttons{
+  display: flex;
+  flex-direction: column;
+  
+}
+.menu-buttons a{
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  margin-bottom: 10px;
+
+  padding:5px;
+}
+
+.menu-buttons a:hover{
+  background-color: rgb(219, 219, 219);
+}
+
+.social-buttons{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin-top: 20px;
+  height: 100px;
+}
+
+.social-buttons i{
+  margin-top: 20px;
+  font-size: 18px;
+
+  justify-self: start;
+}
+
+/*헤더*/
+.container{
+  margin-left: 8%;
+}
+
+.upper-header{
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+
+  font-size: 15px;
+
+  margin-right: 10px;
+}
+
+.search-button{
+  width: 65px;
+  text-align: center;
+  line-height: 40px;
+
+  color:black;
+
+  margin-right: 10px;
+}
+
+.how-to-use{
+  width: 110px;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 150px;
+
+  background-color: #5C3471;
+  color:white;
+}
+
+.write{
+  width: 65px;
+  text-align: center;
+  line-height: 40px;
+  background-color: #E7E5DD;
+  
+}
+
+
+/*푸터*/
+footer{
+  height: 170px;
+  width: 100%;
+
+  background-color: #5C3471;
+
+}
+
+.footer-content-top{
+  justify-content: center;
+  
+  width: 100%;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-content-bottom{
+  display: flex;
+  justify-content: space-evenly;
+
+  margin-top: 60px;
+}
+
+.footer-icons{
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+  color: black;
 }

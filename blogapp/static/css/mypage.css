@@ -1,0 +1,144 @@
+.section{
+    width: 60%;
+    margin: 50px auto 0 auto;
+    border: solid black 1px;
+}
+
+.profile-title{
+    display: flex;
+    
+}
+
+
+h1{
+    font-size: 40px;
+}
+h2{
+    margin: 30px 0 0 0;
+    font-size: 30px;
+}
+
+.profile-title a{ /*프로필 수정 버튼*/
+    height: auto;
+    line-height: 40px;
+    color: black;
+
+    border: solid black 1px;
+    border-radius: 20px;
+
+  
+
+    margin: 5px 10px 5px 10px;
+}
+
+.profile-box-section{
+    display: flex;
+    
+}
+
+
+.profile-box{
+    
+    border: solid black 1px;
+    border-radius: 10px;
+
+    width: 200px;
+    height: 130px;
+
+    margin-top: 20px;
+    margin-right: 10px;
+   
+
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: center;
+}
+
+
+.profile-box p{
+    text-align: center;
+    margin: 3px;
+}
+
+.key{
+    font-weight: bolder;
+}
+
+.value{
+    
+}
+/*내가 쓴 글*/
+.my-post-section{
+    border: solid black 1px;
+    padding:10px;
+
+    margin-top: 30px;
+}
+.post-values{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+
+.post-values p{
+    justify-self: center;
+}
+
+.my-post-object{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    
+    
+}
+
+.my-post-object p{
+    justify-self: center;
+}
+
+
+
+
+.my-post-object:hover {
+    background-color: rgb(212, 212, 212);
+    
+}
+
+/*좋아요*/
+
+.like-post-section{
+    border: solid black 1px;
+    padding:10px;
+}
+
+
+.like-post-values{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.like-post-values p{
+    justify-self: center;
+
+}
+
+.like-post-object{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+    
+}
+
+.like-post-object p{
+    
+justify-self: center;
+    
+}
+
+
+
+
+.like-post-object:hover {
+    background-color: rgb(212, 212, 212);
+    
+}

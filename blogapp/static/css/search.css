@@ -1,0 +1,47 @@
+.search-section{
+    width: 30%;
+
+    margin: 150px auto 200px auto;
+}
+
+.input-group{
+    display: flex;
+}
+
+#input1{
+    background-color: #F1EFE9;
+    border-style: none;
+    border-bottom: solid gray 1px;
+
+
+    font-size: x-large;
+
+    margin-left: 10px;
+
+}
+
+#input2{
+    border-style: none;
+    background-color: #5C3471;
+    border-radius: 10px;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+.searched-post-section{
+    margin-top: 30px;
+}
+
+.searched-post h4{
+    padding: 10px;
+    margin: 3px 0 0 0;
+
+}
+
+.searched-post h4:hover{
+    cursor: pointer;
+    background-color: #cac8c2;
+
+}
