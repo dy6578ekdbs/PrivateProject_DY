@@ -22,6 +22,7 @@ def detail(request, blog_id):
     blog_hashtag = blog_detail.hashtag.all()
     return render(request, 'detail.html', {'blog':blog_detail, 'hashtags':blog_hashtag})
 
+@login_required
 def new(request):
     form = BlogForm()                           
     return render(request, 'new.html', {'form':form})
