@@ -1,5 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
 .none{
     display: none;
+}
+
+#bold{
+    font-weight:600;
 }
 
 .big-post-section{
@@ -9,7 +17,9 @@
 
 .big-post{
 
-    border: solid black 1px;
+    border: solid rgb(187, 186, 180) 1px;
+    border-radius: 5px;
+
     padding: 20px;
     
     width: 60%;
@@ -17,6 +27,7 @@
 
     margin: 50px auto 50px auto;
 }
+
 
 .big-post-info{
     height: 30px;
@@ -42,13 +53,13 @@
     
 }
 .like_count{
-    color: red;
+    color: rgb(223, 98, 98);
     text-align: middle;
     
 }
 
 .fa-heart{
-    color: red;
+    color: rgb(223, 98, 98);
 
 }
 
@@ -106,7 +117,9 @@
 }
 .youtube-post{
 
-    border: solid black 1px;
+   border: solid rgb(187, 186, 180) 1px;
+    border-radius: 5px;
+    
     padding: 20px;
     
     width: 60%;
@@ -169,13 +182,36 @@ iframe{
 
 }
 
-.comment-info{
-   
-}
 
 .comment-text{
-    border: solid rgb(0, 0, 0) 1px;
+    border: solid rgb(187, 186, 180) 1px;
     border-radius: 2px;
-    
+    padding:8px;
+    margin-left: 5px;
     width: 100%;
+}
+
+/*버튼*/
+
+
+.comment-button{
+    background-color: #5C3471;
+    color: white;
+
+    border-style: none;
+    border-radius: 13px;
+
+    padding: 3px 10px 3px 10px;
+
+    font-size: large;
+
+    margin-top: 30px;
+    width: 120px;
+
+    cursor: pointer;
+}
+
+
+.login-section form button:hover{
+    box-shadow: 0px 0px 3px 2px rgba(115, 66, 141, 0.78);
 }
